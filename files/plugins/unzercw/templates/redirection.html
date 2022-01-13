@@ -1,0 +1,21 @@
+<div class="box unzercw-redirection-form">
+	<p class="headline">{$paymentMethodName}</p>
+	
+	<p class="redirection-text">
+		{t_unzercw s='You will be redirected to the payment form.'}
+	</p>
+	
+	<form action="{$formTargetUrl}" name="redirect_form" method="POST">
+		{$hiddenFields}
+		
+		<input type="submit" value="{$buttonContinue}" id="redirect-submit-button" class="button-next" />
+	</form>
+	<script type="text/javascript"> 
+	{literal}
+	jQuery(document).ready(function() {
+		jQuery('#redirect-submit-button').hide();
+		document.redirect_form.submit(); 
+	});
+	{/literal}
+	</script>
+</div>

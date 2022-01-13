@@ -1,0 +1,48 @@
+<div class="unzercw-payment-form" id="unzercw-{$paymentMachineName}-payment-form">
+	
+	{if isset($ajaxScriptUrl)}
+		<script src="{$ajaxScriptUrl}"></script>
+	{/if}
+
+	{if isset($ajaxSubmitCallback)}
+		<script type="text/javascript">
+			var unzercw_ajax_submit_callback_{$paymentMachineName} = {$ajaxSubmitCallback};
+		</script>
+		<noscript>
+			<div class="error">
+				{t_unzercw s='This payment method requires JavaScript. It seems as you have deactivate JavaScript in your browser. Please activate JavaScript to continue. After activating JavaScript you may need reloading the page.'}
+			</div>
+		</noscript>
+	{/if}
+	
+	{if isset($ajaxScriptUrl)}
+		<form class="unzercw-ajax-authorization-form unzercw-payment-form" data-method-name="{$paymentMachineName}">
+	{elseif isset($formActionUrl)}
+		<form action="{$formActionUrl}" method="POST" class="unzercw-payment-form">
+	{/if}
+
+	{if isset($visibleFormFields)}
+			{$visibleFormFields}
+			<p><em>*</em> {t_unzercw s='Required Fields'}</p>
+	{/if}
+
+	{if isset($hiddenFields)}
+		{$hiddenFields}
+	{/if}
+	
+	{if isset($additionalOutput)}
+		{$additionalOutput}
+	{/if}
+	
+	{if isset($ajaxScriptUrl)}
+		</form>
+	{/if}
+	
+	{if isset($buttons)}
+		{$buttons}
+	{/if}
+
+	{if isset($formActionUrl)}
+		</form>
+	{/if}
+</div>

@@ -1,0 +1,52 @@
+.unzercw-form-grid {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.unzercw-form-grid td {
+	padding: 5px;
+}
+
+.unzercw-info-list {
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.unzercw-info-list td {
+	border-spacing: 0;
+	padding: 2px 5px;
+}
+
+.unzercw-backend-form .x-form-item.x-tab-item.wide-element .x-form-element {
+	padding-left: 0px;
+}
+
+.unzercw-backend-form .x-form-item label{
+	width: 200px;
+}
+
+.unzercw-backend-form .unzercw-element > .x-form-element {
+	padding-left: 205px;
+}
+
+.unzercw-backend-form .help-block {
+	padding-left: 205px;
+	display:block;
+}
+
+.unzercw-backend-form .option {
+	display: block;
+}
+
+.unzercw-backend-form .option label {
+	display: inline;
+	float:none;
+}
+
+.unzercw-backend-form .multi-control .x-form-element {
+	padding-left: 0px;
+}
+.unzercw-backend-form .x-form-item {
+	margin-bottom: 14px;
+}

@@ -1,0 +1,43 @@
+
+<li data-role="divider" data-theme="c">
+	{$payment_name}
+</li>
+
+<li data-theme="c" class="unzercw-payment-block" data-module-code="{$payment_code}" data-module-name="{$paymentMachineName}">
+	<div data-role="controlgroup">
+		<label>
+			{if $payment_hidden == true}
+				{form type=radio name=selected_payment value=$payment_code checked=true}
+			{else}
+				{if $payment_code==$payment_selected}
+					{form type=radio name=selected_payment value=$payment_code checked=true}
+				{else}
+					{form type=radio name=selected_payment value=$payment_code}
+				{/if}
+			{/if}
+			<span class="ui-li-heading">
+				<span class="floatRight">{$payment_price.formated}</span>
+				<span class="floatLeft"><strong>{$payment_name}</strong></span>
+			</span>
+	
+			{img img="`$payment_code`.png" type=p plg=unzercw class=productImageBorder}
+			{if $payment_desc}
+				<a href="#popupBasic" data-rel="popup">
+					<span class="ui-li-desc">
+						{$payment_desc}
+					</span>
+				</a>
+			{/if}
+		</label>
+	</div>
+
+	<div data-role="popup" id="popupBasic">
+		<p>{$payment_desc}<p>
+	</div>
+	
+	{if $paymentPane}
+		<div class="unzercw-payment-pane {if $payment_hidden != true && $payment_code != $payment_selected} unzercw-payment-pane-hidden {/if}">
+			{$paymentPane}
+		</div>
+	{/if}
+</li>

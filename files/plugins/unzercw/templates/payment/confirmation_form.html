@@ -1,0 +1,21 @@
+{if isset($aliasFormContent) || isset($visibleFormFields)}
+	</div>
+	
+	<div class="box unzercw-payment-form">
+		<p class="headline">{$paymentMethodName}</p>
+		{if isset($aliasFormContent)}
+			{$aliasFormContent}
+		{/if}
+		
+		{if isset($visibleFormFields)}
+			{$visibleFormFields}
+		{/if}
+		
+		{if isset($additionalHtml)}
+			{$additionalHtml}
+		{/if}
+{elseif isset($additionalHtml)}
+		<div class="unzercw-payment-form">
+			{$additionalHtml}
+		</div>
+{/if}

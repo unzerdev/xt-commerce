@@ -1,0 +1,46 @@
+<div class="unzercw-alias-form">
+	{if isset($aliasTransactions) && count($aliasTransactions) > 0 && isset($selectedAlias) && !empty($selectedAlias) && $selectedAlias != 'new'}
+		<div class="form-group">
+			<label for="unzercw_alias" class="control-label col-sm-4">{t_unzercw s='Use stored Card'}</label>
+			<div class="col-sm-8">
+				<select name="unzercw_alias[{$paymentMachineName}]" id="unzercw_alias" class="form-control"  data-payment-method-name="{$paymentMachineName}">
+					{foreach item=transaction from=$aliasTransactions}
+						<option 
+						{if isset($selectedAlias) && $selectedAlias == $transaction->getTransactionId()}
+							selected="selected" 
+						{/if}
+						value="{$transaction->getTransactionId()}">{$transaction->getAliasForDisplay()}</option>
+					{/foreach}
+				</select>
+			</div>
+		</div>
+	{/if}
+	
+	{if !isset($selectedAlias) || empty($selectedAlias) || $selectedAlias == 'new'}
+		<div class="form-group">
+			<div class="">
+				<div class="checkbox">
+					<label>
+						<input type="hidden" name="unzercw_create_new_alias_present[{$paymentMachineName}]" value="active" />
+						<input type="checkbox" name="unzercw_create_new_alias[{$paymentMachineName}]" value="on" data-payment-method-name="{$paymentMachineName}"
+						{if $selectedAlias == 'new'} checked="checked" {/if}
+						 /> {t_unzercw s='Store !method' method=$paymentMethodName}
+					</label>
+				</div>
+			</div>
+		</div>
+	{/if}
+	
+	<div class="form-group">
+	
+		{if isset($selectedAlias) && !empty($selectedAlias) && $selectedAlias != 'new'}
+			<input type="submit" name="unzercw_alias_use_new_card[{$paymentMachineName}]" class="btn btn-default" value="{t_unzercw s='Use new card'}" />
+		{elseif isset($aliasTransactions) && count($aliasTransactions) > 0 && (!isset($selectedAlias) || empty($selectedAlias) || $selectedAlias == 'new')}
+			<input type="submit" name="unzercw_alias_use_stored_card[{$paymentMachineName}]" class="btn btn-default" value="{t_unzercw s='Use stored card'}" />
+		{/if}
+		<noscript>
+			<input type="submit" class="btn btn-default" name="unzercw_update_alias[{$paymentMachineName}]" value="{t_unzercw s='Update'}" />
+		</noscript>
+		
+	</div>
+</div>

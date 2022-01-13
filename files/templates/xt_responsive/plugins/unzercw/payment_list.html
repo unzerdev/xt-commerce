@@ -1,0 +1,38 @@
+{if $payment_name|trim != '' && $payment_code|trim != ''}
+
+    <div class="item item-{$payment_code}{if $payment_code == $payment_selected} selected{/if} payment-container unzercw-payment-block"  data-module-code="{$payment_code}" data-module-name="{$paymentMachineName}">
+        {if $payment_icon|trim != ''}
+            {img img=$payment_icon type=w_media_payment alt=$payment_name class="icon img-responsive img-thumbnail pull-right" style="margin-top:-15px;"}
+        {/if}
+	    <header data-toggle="collapse" data-target=".item-{$payment_code} .collapse">
+            <label class="cursor-pointer">
+                <span class="check">
+                    {if $payment_hidden == true}
+                        {form type=hidden name=selected_payment value=$payment_code}
+                    {else}
+                        {if $payment_code == $payment_selected}
+                            {form type=radio name=selected_payment value=$payment_code checked=true style="vertical-align: text-top;"}
+                        {else}
+                            {form type=radio name=selected_payment value=$payment_code style="vertical-align: text-top;"}
+                        {/if}
+                    {/if}
+                </span>
+                <span class="name payment-name">{$payment_name}</span>
+                {if $payment_price.formated}
+                    <small class="price">&nbsp;{$payment_price.formated}</small>
+                {/if}
+            </label>
+        </header>
+        {if $payment_desc|trim != ''}
+            <div class="desc collapse{if $payment_code == $payment_selected} in{/if} payment-desc">
+                {$payment_desc}
+            </div>
+        {/if}
+		{if $paymentPane}
+			<div class="unzercw-payment-pane collapse{if $payment_code == $payment_selected} in{/if}">
+				{$paymentPane}
+			</div>
+		{/if}
+    </div>
+
+{/if}

@@ -1,0 +1,99 @@
+.unzercw-payment-form {
+	margin-top: 20px;
+	background-color: #fff;	
+}
+
+.unzercw-multi-control .unzercw-controls { 
+	display: inline;
+}
+
+.unzercw-payment-form .unzercw-control-group {
+	margin-bottom: 15px;
+}
+
+.unzercw-payment-form .unzercw-control-label {
+	display: block;
+}
+.unzercw-payment-form .unzercw-control-label .unzercw-required {
+	color: #d80000;
+	font-weight: bold;
+}
+
+.unzercw-payment-form .unzercw-description {
+}
+
+.unzercw-payment-form .unzercw-error {
+	color: #D8000C;
+}
+
+.unzercw-iframe {
+	width: 100%;
+	border: none;
+}
+
+.unzercw-widget {
+	width: 100%;
+	border: none;
+}
+
+
+
+.unzercw-payment-form .card-brand-image-box {
+	display: inline-block;
+}
+
+
+.unzercw-payment-form .card-brand-image-color.brand-is-deselected {
+	display:none;
+}
+
+.unzercw-payment-form .card-brand-image-grey.brand-is-selected {
+	display:none;
+}
+
+.unzercw-payment-form .card-brand-image-selection img {
+	width:auto;
+	height: 25px;
+	margin-right: 5px;
+}
+
+.unzercw-payment-form .invalid-card-number, .unzercw-payment-form .invalid-cvc-number {
+	border-color: #fb7f88;
+	background-image: url(../img/invalid.png) !important;
+	background-position: 95% center;
+	background-repeat: no-repeat;
+}
+
+.unzercw-payment-form .valid-card-number, .unzercw-payment-form .valid-cvc-number {
+	background-image: url(../img/valid.png) !important;
+	background-position: 95% center;
+	background-repeat: no-repeat;
+}
+
+.unzercw-payment-form .card-cvc input[type='text']{
+	width: 60px;
+}
+
+
+.unzercw-ajax-overlay {
+	position: relative;
+    background-color: #000;
+    filter:alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    z-index: 10000;
+}
+
+.unzercw-payment-pane-hidden {
+	display: none;
+}
+
+.unzercw-error {
+	margin: 20px 0;
+	padding: 20px;
+	border-left: 3px solid #d9534f;
+	background-color: #fdf7f7;
+}
+
+
