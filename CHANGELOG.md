@@ -8,4 +8,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Changed
 * Initial release
 
-[1.0.87]: https://github.com/unzerdev/gambio/tree/1.0.87
+[1.0.87]: https://github.com/unzerdev/xt-commerce/tree/1.0.87

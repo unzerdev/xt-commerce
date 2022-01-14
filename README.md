@@ -1,6 +1,6 @@
 ![Logo](unzer_logo.svg)
 
-# Unzer Gambio Plugin
+# Unzer xt:Commerce Plugin
 This plugin provides for an easy way to connect to the Unzer Rest API.
 
 Please refer to the attached manual file for installation instructions and usage information.
